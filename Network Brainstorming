@@ -1,0 +1,44 @@
+Plearn will essentially be a collection of questions, with the goal of being able to predict questions relavent to the user.
+- To build this predictive capability, the questions will require a reference infrastructure.
+- This reference infrastructure would be a network that can determine distance and connectivity between topics.
+
+A proposed architecture would be this:
+- Question will have a set of information independent of an individual user.
+- This information set will be a collection of "tags" that are references to the subjects the question pertains to.
+
+Two examples:
+Q1.) What is the integral of 1/x^2 from -inf to +inf?
+     - Tag1: Math
+     - Tag2: Calculus
+     - Tag3: Integration
+     - Tag4: Complex Analysis
+     - Tag5: Contour Integration
+  
+Q2.) How many loafs of bread could be baked from a 1 acre wheat field?
+     - Tag1: Farming
+     - Tag2: Baking
+     - Tag3: Math
+     - Tag4: Unit conversion
+     - Tag5: Milling
+     - Tag6: Manufacturing
+    
+In each of these examples, the underlying network is exposed, which contains the position in "information space" that the question resides in.
+
+Each of these tags should also have a relative weight associated with them, an indicator of how relavant they are to the question.
+
+Due to an individual's incomplete knowledge and other technical reasons, it would be recommended that these tags and weights are continuously re-evaluated as users interact with Plearn.
+A method for doing this could be to require the user to not just answer the question, but also provide at least one tag with where they think the question belongs.
+
+As you collect population data about the question, you'll be able to more accurately place the question in "information space".
+
+Additionally, from the distribution of tags, you can help to determine the question's "breadth" or "depth".
+- Q1 for example would be a "depth" question, as it represents relatively deep knowledge in math.
+      - Quantification: Tags are a series of nearest neighbors.
+      
+- Q2 would be a "breadth" example, as it requires knowledge from many poorly related fields.
+      - Quantification: Tags are a set of network points that have low probability of being connected.
+      
+My feeling is that this is a complex linear algebra problem.
+- Required tool sets will be:
+    - To be able to determine "connectivity" of network points (Tags)
+- May be worth looking at this problem in terms of a neural network of sorts.
