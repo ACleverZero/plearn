@@ -42,3 +42,13 @@ My feeling is that this is a complex linear algebra problem.
 - Required tool sets will be:
     - To be able to determine "connectivity" of network points (Tags)
 - May be worth looking at this problem in terms of a neural network of sorts.
+
+Additional User thoughts:
+- The user's input "Tags" may also be used to highlight their known/unknown fields of topics.
+    - A user might know that Q1. relates to "Integration", but not "Complex analysis". 
+    - Can use this to predict "Complex Analysis" as a learning area.
+    
+Recommended reading:
+- https://en.wikipedia.org/wiki/Network_theory
+- https://en.wikipedia.org/wiki/Cluster_analysis
+- https://en.wikipedia.org/wiki/Nearest_neighbor_search
